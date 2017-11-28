@@ -9,6 +9,11 @@
   </main-layout>
 </template>
 <script>
+  var Vue = require('vue');
+  var VueResource = require('vue-resource');
+  var links = 'https://api-front.tempoagora.com.br/observed?city=SaoPaulo-SP';
+  Vue.use(VueResource);
+
   import MainLayout from '../layouts/Main.vue'
   export default {
     components: {
@@ -19,7 +24,7 @@
     },
     methods:{
       getUsers: function(){
-        this.$http.get(link).then(function(response){
+        this.$http.get(links).then(function(response){
           this.todos = response.data.list;
           console.log(response.data.list);
          }, function(error){
