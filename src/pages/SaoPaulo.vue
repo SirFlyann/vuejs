@@ -19,8 +19,10 @@
     components: {
       MainLayout
     },
-    data: {
-      todos: null
+    data: () => {
+      return {
+        todos: null
+      }
     },
     methods:{
       getUsers: function(){
